@@ -1,6 +1,6 @@
 # User sets the proper working directory. Only things in directory should be desired PDF's.
 
-setwd("O:/0950/Orwork/ISOPDF/Hand Input/Batch_1") # Set the location of PDF's to be read
+setwd("O:/0950/Orwork/ISOPDF/Hand Input/Batch_2") # Set the location of PDF's to be read
 dest_folder <- "O:/0950/Orwork/ISOPDF/Hand Input/R Output/"  # Where the output of this program is saved
 
 # check.packages function: install and load multiple R packages.
@@ -231,9 +231,9 @@ naic_row <- matrix(c("NAIC Number",naic_num),ncol=2)
 # Detecting appropriate pages
 pdftext <- pdf_text(test_file)
 page2 <- grep("Bonds",pdftext)[1] #Asset Page
-page3 <- grep("Losses",pdftext)[1] #Liability Page
-page4 <- grep("principles",pdftext)[1] #Income Statement
-page5 <- grep("provided",pdftext)[1] #Cash Flow Statement
+page3 <- page2 + 1 #Liability Page
+page4 <- page3 + 1 #Income Statement
+page5 <- page4 + 1 #Cash Flow Statement
 page14 <- grep("Years in",pdftext)[1] #Part3 Loss and LAE Schedule
 correct_page_nos <- c(page2,page3,page4,page5,page14) #temporary assignment while we work on first two pages
 
